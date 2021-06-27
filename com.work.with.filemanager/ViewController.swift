@@ -22,10 +22,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         view.addSubview(navBar)
 
-        let navItem = UINavigationItem(title: "File Manager")
-        let doneItem = UIBarButtonItem(title: "Create directory", style: .plain, target: nil, action: #selector(showAlert))
-        let photoItem = UIBarButtonItem(title: "Take photo", style: .plain, target: nil, action: #selector(btnClicked))
-
+        let navItem = UINavigationItem(title: "File Manager".localized())
+        
+        let doneItem = UIBarButtonItem(title: "Create directory".localized(), style: .plain, target: nil, action: #selector(showAlert))
+        
+        let photoItem = UIBarButtonItem(title: "Take photo".localized(), style: .plain, target: nil, action: #selector(btnClicked))
+        
         navItem.rightBarButtonItem = doneItem
         navItem.leftBarButtonItem = photoItem
 
@@ -50,10 +52,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     @objc func showAlert() {
-        let ac = UIAlertController(title: "Enter directory name", message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "Enter directory name".localized(), message: nil, preferredStyle: .alert)
         ac.addTextField()
+        ac.accessibilityLabel = "[create-directory-alert]"
 
-        let submitAction = UIAlertAction(title: "OK", style: .default) { [self, unowned ac] _ in
+        let submitAction = UIAlertAction(title: "Done".localized(), style: .default) { [self, unowned ac] _ in
             let answer = ac.textFields![0]
             createDirectory(name: answer.text!)
         }
@@ -151,5 +154,11 @@ extension ViewController: UITableViewDataSource {
             print("Error while enumerating files: \(error.localizedDescription)")
         }
         return urls
+    }
+}
+
+extension String {
+    func localized(withComment comment: String? = nil) -> String {
+        return NSLocalizedString(self, comment: comment ?? "")
     }
 }

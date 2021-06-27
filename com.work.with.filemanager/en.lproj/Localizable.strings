@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  com.work.with.filemanager
+
+  Created by v.milchakova on 27.06.2021.
+  
+*/
+"Take photo" = "Take photo";
+"Create directory" = "Create directory";
+"File Manager" = "File Manager";
+"Enter directory name" = "Enter directory name";
+"Done" = "Done";
