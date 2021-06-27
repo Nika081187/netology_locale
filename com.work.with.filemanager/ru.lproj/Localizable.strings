@@ -5,8 +5,8 @@
   Created by v.milchakova on 27.06.2021.
   
 */
-"Take photo" = "Сделать фото";
-"Create directory" = "Создать папку";
-"File Manager" = "Файловый менеджер";
-"Enter directory name" = "Введите имя папки";
-"Done" = "Готово";
+"takePhoto" = "Сделать фото";
+"createDirectory" = "Создать папку";
+"fileManager" = "Файловый менеджер";
+"newDirectoryAlert" = "Введите имя папки";
+"done" = "Готово";

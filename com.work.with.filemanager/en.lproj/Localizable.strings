@@ -5,8 +5,8 @@
   Created by v.milchakova on 27.06.2021.
   
 */
-"Take photo" = "Take photo";
-"Create directory" = "Create directory";
-"File Manager" = "File Manager";
-"Enter directory name" = "Enter directory name";
-"Done" = "Done";
+"takePhoto" = "Take photo";
+"createDirectory" = "Create directory";
+"fileManager" = "File Manager";
+"newDirectoryAlert" = "Enter directory name";
+"done" = "Done";

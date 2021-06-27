@@ -22,11 +22,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         view.addSubview(navBar)
 
-        let navItem = UINavigationItem(title: "File Manager".localized())
+        let navItem = UINavigationItem(title: "fileManager".localized())
         
-        let doneItem = UIBarButtonItem(title: "Create directory".localized(), style: .plain, target: nil, action: #selector(showAlert))
+        let doneItem = UIBarButtonItem(title: "createDirectory".localized(), style: .plain, target: nil, action: #selector(showAlert))
         
-        let photoItem = UIBarButtonItem(title: "Take photo".localized(), style: .plain, target: nil, action: #selector(btnClicked))
+        let photoItem = UIBarButtonItem(title: "takePhoto".localized(), style: .plain, target: nil, action: #selector(btnClicked))
         
         navItem.rightBarButtonItem = doneItem
         navItem.leftBarButtonItem = photoItem
@@ -52,11 +52,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     @objc func showAlert() {
-        let ac = UIAlertController(title: "Enter directory name".localized(), message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "newDirectoryAlert".localized(), message: nil, preferredStyle: .alert)
         ac.addTextField()
         ac.accessibilityLabel = "[create-directory-alert]"
 
-        let submitAction = UIAlertAction(title: "Done".localized(), style: .default) { [self, unowned ac] _ in
+        let submitAction = UIAlertAction(title: "done".localized(), style: .default) { [self, unowned ac] _ in
             let answer = ac.textFields![0]
             createDirectory(name: answer.text!)
         }
